@@ -10,7 +10,7 @@ var port = Environment.GetEnvironmentVariable("PORT")??"8080";
 app.MapGet("/", () =>
 {
     app.Logger.LogInformation("Initial Home Get");
-    return "GET - Net 6 Running ... 22122023-v1.0.0 CI/CD with TRAVISCI JOB v1.0.10 POLYGLOT TRAINNER FRANCO";
+    return "GET - Net 6 Running ... 22122023-v1.0.0 CI/CD with TRAVISCI JOB v1.0.10 POLYGLOT TRAVIS";
 });
 
 app.MapPost("/", () =>
