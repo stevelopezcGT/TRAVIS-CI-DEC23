@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   name: app-deployment
   labels:
-    app: service-polyglot
+    app: service-aforo255
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-polyglot
+      app: service-aforo255
   template:
     metadata:
       labels:
-        app: service-polyglot
+        app: service-aforo255
     spec:
       containers:
-      - name: service-polyglot
-        image: stevelopez/ms-test:latest
+      - name: service-aforo255
+        image: antony0618/servicenet5:latest
         ports:
-        - containerPort: 80 #change port value 8080 on microservice development
+        - containerPort: 80
         imagePullPolicy: Always
 ---
 kind: Service
@@ -28,9 +28,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: service-polyglot
+    app: service-aforo255
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 80 # same to line 21
+    targetPort: 80
     name: http
